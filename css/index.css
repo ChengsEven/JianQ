@@ -13,6 +13,9 @@ body{
 	position: relative;
 }
 
+ul.list>li h2{
+	width: 90%;
+}
 /*** news 相关的样式 ***/
 .new {
 	display: inline-block;
@@ -24,8 +27,8 @@ body{
 	font-size: 0.8rem;
 	position: absolute;
 	text-align: center;
-	top: -5px;
-	right: -5px;
+	top: 5px;
+	right: 0px;
 }
 
 .new:after {
