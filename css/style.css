@@ -1,0 +1,281 @@
+/** style.css **/
+/*** 字号用rem控制相对字体，相对12px来说 ***/
+html {
+	font-size: 12px;		/*** base font size ****/
+}
+
+
+
+/** reset 针对一般的组件进行的标准化 ******/
+*{ margin:0px; padding:0px;}
+textarea, input {
+	-webkit-appearance: none;
+}
+
+/*** reset end *********/
+
+/** search box ***/
+.search-bar{
+	width:100%;
+	background: #D7D7D7;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+.search-bar>.search-box {
+	margin-left:10px;
+	margin-right:10px;
+	background:#fff;
+	height:40px;
+	line-height:40px;
+	border-radius:50px;
+	padding-left:45px;
+	
+	background-image: url(../img/ios7-search.png);
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-position: 10px;
+	background-size: 28px;
+}
+
+.search-bar>.search-box>input{
+	border: 0px;
+	width: 90%;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-size: 1.1rem;
+}
+
+
+/** list ********************/
+ul.list{
+	display:block;
+	width:100%;
+	list-style:none;
+	border: 1px solid #ddd;
+	background:#fff;
+	padding: 0px;
+}
+
+ul.list:first-child{
+	margin-top:20px;
+}
+
+ul.list>li{
+	display:block;
+	padding:15px;
+	position:relative;
+	border-bottom: 1px solid #ddd;
+	list-style: none;
+}
+/** 带缩略图的列表 **/
+ul.list>li.image-item:before,ul.list>li.image-item:after{
+	content: ' ';
+	display:block;
+}
+ul.list>li.image-item:after {
+	clear:both;
+}
+
+ul.list>li.image-item>img{
+	display:inline-block;
+	float:left;
+	width:20%;
+}
+ul.list>li.image-item>.img-item-content{
+	float:left;
+	width:75%;
+	margin-left:10px;
+}
+
+ul.list>li:last-child{
+	border-bottom: 0px;
+}
+ul.list>li .item-note{
+	position:absolute;
+	right:15px;
+	top:15px;
+	font-size:16px;
+	color:#888;
+	display: inline-block;
+}
+ul.list>li h2{
+	margin:0px;
+	font-size:1.2rem;
+	font-weight: normal;
+	margin-bottom:3px;
+}
+ul.list>li p{
+	margin:0px;
+	font-size:1rem;
+}
+
+/******** list end ************/
+
+/***** grids ******************/
+.row{
+	display:block;
+	width:100%;
+	clear:both;
+}
+.row:before, .row:after{ display:table; content: ' ';}
+.row:after{ clear: both;}
+
+.col1-3{ float:left;width:33.3%;}
+.col2-3{ float:left;width:66.7%;}
+.col1-2{ float:left;width:50%;}
+.col1-4{ float:left;width: 25%;}
+.col3-4{ float:left;width:75%;}
+
+/***** grids end **********/
+
+
+/******* buttons ***************/
+/*** 默认选种颜色为#2818E2 **/
+.button{
+	background-color:#2818E2;
+	color:#fff;
+	border: 0px;
+	padding: 10px 15px;
+	border-radius:3px;
+}
+.button-outline{ color:#2818E2; background-color:#fff;border:1px solid #2818E2;}
+.button-block{ display:block;width:96%;margin:0 auto;}
+
+/******* buttons end *************/
+/** actionsheet **/
+.actionsheet{
+	display:block;
+	width:100%;
+	position:absolute;
+	bottom:10px;
+	z-index:10000;
+}
+
+.actionsheet>.button{
+	margin-bottom:2px;
+	background-color:#fff;
+	color:blue;
+	border-radius:0px;
+}
+
+.actionsheet>.button:first-child{
+	border-top-right-radius:3px;
+	border-top-left-radius:3px;
+}
+
+.actionsheet>.button.cancel{
+	margin-top:6px;
+	font-weight:bold;
+	color:red;
+}
+
+.actionsheetMask{
+	position:absolute;
+	top:0px;
+	bottom:0px;
+	width:100%;
+	background: rgba(0,0,0,0.3);
+}
+
+/** actionsheet end **/
+
+/** table ****/
+table { margin:0px auto; width:100%; background:#fff;}
+table.strip tr:nth-child(2n-1) {
+	background: rgba(221, 221, 221, 0.15);;
+}
+table,table td,table th { 
+	border: 1px solid #ddd; 
+	border-collapse:collapse;
+}
+
+table td,table th{
+	padding:10px;
+	vertical-align: middle;
+	align: left;
+}
+
+table th{ font-size:1.2em;font-weight:bold;}
+/***** table end ****/			
+
+.hide{display:none !important;}
+
+
+
+/*iScroll*/
+.wrapper {
+        position: absolute;
+        z-index: 1;
+        top: 60px;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        padding: 0px;
+}
+
+.scroller {
+        position: absolute;
+        z-index: 1;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        width: 100%;
+        padding: 0;
+}
+
+#pullDown,#pullUp {
+        background: #fff;
+        height: 40px;
+        line-height: 40px;
+        padding: 5px 10px;
+        border-bottom: 1px solid #ccc;
+        font-weight: bold;
+        font-size: 14px;
+        color: #888;
+}
+
+#pullDown .pullDownIcon,#pullUp .pullUpIcon {
+        display: block;
+        float: left;
+        width: 40px;
+        height: 40px;
+        background: url(../img/pull-icon@2x.png) 0 0 no-repeat;
+        -webkit-background-size: 40px 80px;
+        background-size: 40px 80px;
+        -webkit-transition-property: -webkit-transform;
+        -webkit-transition-duration: 250ms;
+}
+
+#pullDown .pullDownIcon {
+        -webkit-transform: rotate(0deg) translateZ(0);
+}
+
+#pullUp .pullUpIcon {
+        -webkit-transform: rotate(-180deg) translateZ(0);
+}
+
+#pullDown.flip .pullDownIcon {
+        -webkit-transform: rotate(-180deg) translateZ(0);
+}
+
+#pullUp.flip .pullUpIcon {
+        -webkit-transform: rotate(0deg) translateZ(0);
+}
+
+#pullDown.loading .pullDownIcon,#pullUp.loading .pullUpIcon {
+        background-position: 0 100%;
+        -webkit-transform: rotate(0deg) translateZ(0);
+        -webkit-transition-duration: 0ms;
+        -webkit-animation-name: loading;
+        -webkit-animation-duration: 2s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+}
+
+@-webkit-keyframes loading {
+	from { -webkit-transform:rotate(0deg)translateZ(0);}
+	to { -webkit-transform: rotate(360deg) translateZ(0);}
+}
+/*iScroll_end*/
+
+
+
