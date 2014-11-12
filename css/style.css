@@ -7,7 +7,10 @@ html {
 
 
 /** reset 针对一般的组件进行的标准化 ******/
-*{ margin:0px; padding:0px;}
+*{ 
+	margin:0px; 
+	padding:0px;
+}
 textarea, input {
 	-webkit-appearance: none;
 }
@@ -60,37 +63,39 @@ ul.list:first-child{
 	margin-top:20px;
 }
 
-ul.list>li{
+ul.list>.item{
 	display:block;
 	padding:15px;
 	position:relative;
 	border-bottom: 1px solid #ddd;
 	list-style: none;
+	
 }
+
 /** 带缩略图的列表 **/
-ul.list>li.image-item:before,ul.list>li.image-item:after{
+ul.list>.item.image-item:before,ul.list>.item.image-item:after{
 	content: ' ';
 	display:block;
 }
-ul.list>li.image-item:after {
+ul.list>.item.image-item:after {
 	clear:both;
 }
 
-ul.list>li.image-item>img{
+ul.list>.item.image-item>img{
 	display:inline-block;
 	float:left;
 	width:20%;
 }
-ul.list>li.image-item>.img-item-content{
+ul.list>.item.image-item>.img-item-content{
 	float:left;
 	width:75%;
 	margin-left:10px;
 }
 
-ul.list>li:last-child{
+ul.list>.item:last-child{
 	border-bottom: 0px;
 }
-ul.list>li .item-note{
+ul.list>.item .item-note{
 	position:absolute;
 	right:15px;
 	top:15px;
@@ -98,13 +103,13 @@ ul.list>li .item-note{
 	color:#888;
 	display: inline-block;
 }
-ul.list>li h2{
+ul.list>.item h2{
 	margin:0px;
-	font-size:1.2rem;
+	font-size:1.5rem;
 	font-weight: normal;
 	margin-bottom:3px;
 }
-ul.list>li p{
+ul.list>.item p{
 	margin:0px;
 	font-size:1rem;
 }
@@ -120,10 +125,10 @@ ul.list>li p{
 .row:before, .row:after{ display:table; content: ' ';}
 .row:after{ clear: both;}
 
-.col1-3{ float:left;width:33.3%;}
-.col2-3{ float:left;width:66.7%;}
 .col1-2{ float:left;width:50%;}
 .col1-4{ float:left;width: 25%;}
+.col1-3{ float:left;width:33.3%;}
+.col2-3{ float:left;width:66.7%;}
 .col3-4{ float:left;width:75%;}
 
 /***** grids end **********/
